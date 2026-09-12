@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+node_modules/
+dist/
+runs/
+.env
+.env.*
+*.cookies.json
+*session.json
+*.tar.gz
+.DS_Store

@@ -1,0 +1,42 @@
+[
+  {
+    "rank": 1,
+    "username": "VOLO AI",
+    "model_name": "qwen3.6-flash",
+    "track": "smoke",
+    "avg_pass_rate": 100.0,
+    "avg_feature_implementation_rate": 100.0,
+    "total_token_millions": 0.0,
+    "total_token_cost": 7.2e-05,
+    "token_cost_currency": "CNY",
+    "cost_efficiency": 1388888.8889,
+    "efficiency_threshold": 80.0,
+    "efficiency_eligible": true,
+    "seniority_label": "senior",
+    "avg_runtime_seconds": 1,
+    "submission_count": 1,
+    "task_id": null,
+    "task_title": null,
+    "is_complete": true
+  },
+  {
+    "rank": 2,
+    "username": "VOLO AI",
+    "model_name": "qwen3.6-flash",
+    "track": "smoke",
+    "avg_pass_rate": 100.0,
+    "avg_feature_implementation_rate": 100.0,
+    "total_token_millions": 0.0,
+    "total_token_cost": 0.002114,
+    "token_cost_currency": "CNY",
+    "cost_efficiency": 47303.6897,
+    "efficiency_threshold": 80.0,
+    "efficiency_eligible": true,
+    "seniority_label": "senior",
+    "avg_runtime_seconds": 2,
+    "submission_count": 1,
+    "task_id": null,
+    "task_title": null,
+    "is_complete": true
+  }
+]

@@ -1,0 +1,6 @@
+<!doctype html><meta charset="utf-8"><title>Counter audit fixture</title>
+<output data-testid="count">0</output>
+<button onclick="setCount(n+1)">Increment</button>
+<button onclick="setCount(n-1)">Decrement</button>
+<button onclick="setCount(0)">Reset</button>
+<script>let n=0;function setCount(value){n=value;document.querySelector('[data-testid=count]').textContent=n}</script>

@@ -1,0 +1,128 @@
+[
+  {
+    "id": "5328c93e9838",
+    "submission_id": "4dc548c49e40",
+    "display_name": "SECURITY-REPRO-zero-model-public-answers-v1",
+    "model_name": "qwen3.6-flash",
+    "competition_id": "smoke",
+    "requirement_id": "smoke--counter",
+    "status": "PASSED",
+    "score": 100.0,
+    "test_pass_rate": 100.0,
+    "passed_count": 1,
+    "failed_count": 0,
+    "run_duration_seconds": 0,
+    "token_count": 0,
+    "token_cost_usd": 0.0,
+    "token_cost_currency": "CNY",
+    "started_at": "2026-09-12T16:00:49.897246",
+    "finished_at": "2026-09-12T16:01:02.050542",
+    "model_requests": [],
+    "model_responses": [],
+    "source_note": "Historical disclosed control; the standalone code in this repository is a separately verified successor."
+  },
+  {
+    "id": "6076600e642d",
+    "submission_id": "8f6c053c90cc",
+    "display_name": "SECURITY-REPRO-fixed-answers-tiny-router-v1",
+    "model_name": "qwen3.6-flash",
+    "competition_id": "smoke",
+    "requirement_id": "smoke--counter",
+    "status": "PASSED",
+    "score": 100.0,
+    "test_pass_rate": 100.0,
+    "passed_count": 1,
+    "failed_count": 0,
+    "run_duration_seconds": 1,
+    "token_count": 25,
+    "token_cost_usd": 3.6e-05,
+    "token_cost_currency": "CNY",
+    "started_at": "2026-09-12T16:21:08.941834",
+    "finished_at": "2026-09-12T16:21:22.093281",
+    "model_requests": [
+      {
+        "messages": [
+          {
+            "role": "user",
+            "content": "counter or dice? One word.\nARC Counter Smoke Test"
+          }
+        ],
+        "parameters": {
+          "model": "qwen3.6-flash",
+          "stream": false,
+          "max_tokens": 4,
+          "enable_thinking": false
+        }
+      }
+    ],
+    "model_responses": [
+      {
+        "label": "Counter",
+        "usage": {
+          "completion_tokens": 1,
+          "completion_tokens_details": {
+            "text_tokens": 1
+          },
+          "prompt_tokens": 24,
+          "prompt_tokens_details": {
+            "text_tokens": 24
+          },
+          "total_tokens": 25
+        }
+      }
+    ],
+    "source_note": "Historical disclosed control; the standalone code in this repository is a separately verified successor."
+  },
+  {
+    "id": "03d81f1d24ed",
+    "submission_id": "8f6c053c90cc",
+    "display_name": "SECURITY-REPRO-fixed-answers-tiny-router-v1",
+    "model_name": "qwen3.6-flash",
+    "competition_id": "smoke",
+    "requirement_id": "smoke--dice",
+    "status": "PASSED",
+    "score": 100.0,
+    "test_pass_rate": 100.0,
+    "passed_count": 1,
+    "failed_count": 0,
+    "run_duration_seconds": 1,
+    "token_count": 25,
+    "token_cost_usd": 3.6e-05,
+    "token_cost_currency": "CNY",
+    "started_at": "2026-09-12T16:21:30.963727",
+    "finished_at": "2026-09-12T16:21:43.222434",
+    "model_requests": [
+      {
+        "messages": [
+          {
+            "role": "user",
+            "content": "counter or dice? One word.\nARC Dice Smoke Test"
+          }
+        ],
+        "parameters": {
+          "model": "qwen3.6-flash",
+          "stream": false,
+          "max_tokens": 4,
+          "enable_thinking": false
+        }
+      }
+    ],
+    "model_responses": [
+      {
+        "label": "dice",
+        "usage": {
+          "completion_tokens": 1,
+          "completion_tokens_details": {
+            "text_tokens": 1
+          },
+          "prompt_tokens": 24,
+          "prompt_tokens_details": {
+            "text_tokens": 24
+          },
+          "total_tokens": 25
+        }
+      }
+    ],
+    "source_note": "Historical disclosed control; the standalone code in this repository is a separately verified successor."
+  }
+]
