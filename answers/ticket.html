@@ -1,0 +1,39 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>账户信息</title>
+<style>body{font:16px system-ui;max-width:760px;margin:32px auto;padding:0 24px}nav{display:flex;gap:20px;align-items:center;margin-bottom:28px}form{display:grid;gap:14px}label{display:grid;gap:5px}input,select,button{font:inherit;padding:9px;border:1px solid #aaa;border-radius:4px}button{background:#16774d;color:white;cursor:pointer}fieldset{border:0;padding:0}#feedback{color:#b32323}#strength{padding:4px}label.check{display:block}</style></head>
+<body><nav id="nav"></nav><main id="main"></main><div role="alert" id="feedback" hidden></div>
+<script>
+const nav=document.querySelector('#nav'),main=document.querySelector('#main'),feedback=document.querySelector('#feedback');
+function link(text,href){const a=document.createElement('a');a.textContent=text;a.href=href;return a;}
+function header(username){nav.replaceChildren(link('首页','/'));if(username){const name=document.createElement('span');name.textContent=username;nav.append(name,link('退出登录','/logout'));}else nav.append(link('注册','/register'),link('登录','/login'));}
+function alertText(text){feedback.textContent=text;feedback.hidden=!text;}
+async function api(url,data){const response=await fetch(url,data?{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}:{});return response.json();}
+let authRevision=0;
+function signedIn(username){authRevision++;header(username);main.innerHTML='<h1>账户信息</h1><p>登录成功</p>';alertText('');}
+const route=location.pathname;
+if(route!=='/logout')header(null);
+if(route==='/register'){
+ main.innerHTML=`<h1>账户信息</h1><form id="register" novalidate>
+ <label>用户名<input name="username" autocomplete="username"></label>
+ <label>登录密码<input name="password" type="password" autocomplete="new-password"></label>
+ <div id="strength" role="meter" aria-label="密码强度" data-testid="password-strength" aria-valuemin="0" aria-valuemax="3" aria-valuenow="0">密码强度：未填写</div>
+ <label>确认密码<input name="confirmPassword" type="password" autocomplete="new-password"></label>
+ <label>证件类型<select name="documentType"><option value="">请选择证件类型</option><option value="passport">护照</option><option value="identity">身份证</option></select></label>
+ <label>姓名<input name="name" autocomplete="name"></label>
+ <label>证件号码<input name="documentNumber"></label>
+ <label>优惠类型<select name="discountType"><option value="">请选择乘客类型</option><option value="adult">成人</option><option value="student">学生</option></select></label>
+ <label>邮箱<input name="email" type="text" autocomplete="email"></label>
+ <label>国家/地区代码<select name="countryCode"><option value="+86">+86</option><option value="+84">+84</option><option value="+1">+1</option></select></label>
+ <label>手机号<input name="mobileNumber" autocomplete="tel-national"></label>
+ <label class="check"><input name="terms" type="checkbox" value="yes">我同意服务条款和隐私政策</label>
+ <button type="submit">下一步</button></form>`;
+ const form=document.querySelector('#register'),password=form.elements.password,meter=document.querySelector('#strength');
+ password.addEventListener('input',()=>{const value=password.value;const level=!value?0:value.length<8?1:3;meter.setAttribute('aria-valuenow',String(level));meter.textContent='密码强度：'+(['未填写','弱','中','强'][level]);});
+ form.addEventListener('submit',async event=>{event.preventDefault();alertText('');try{const result=await api('/api/register',Object.fromEntries(new FormData(form)));if(result.username)signedIn(result.username);else alertText(result.error||'注册失败');}catch{alertText('请求失败，请重试');}});
+}else if(route==='/login'){
+ main.innerHTML='<h1>登录</h1><form id="login" novalidate><label>用户名或邮箱<input name="identifier" autocomplete="username"></label><label>密码<input name="password" type="password" autocomplete="current-password"></label><button type="submit">立即登录</button></form>';
+ const form=document.querySelector('#login');form.addEventListener('submit',async event=>{event.preventDefault();alertText('');try{const result=await api('/api/login',Object.fromEntries(new FormData(form)));if(result.username)signedIn(result.username);else alertText(result.error||'无效凭据');}catch{alertText('无效凭据');}});
+}else if(route==='/logout'){
+ api('/api/logout',{}).then(()=>location.replace('/'));
+}else main.innerHTML='<h1>火车票预订演示系统</h1><p>请从上方入口注册或登录。</p>';
+if(route!=='/logout'){const revision=authRevision;api('/api/session').then(result=>{if(revision===authRevision)header(result.username)}).catch(()=>{});}
+</script></body></html>

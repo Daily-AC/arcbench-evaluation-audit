@@ -1,0 +1,37 @@
+[
+  {
+    "task": "smoke--counter",
+    "kind": "counter",
+    "title": "ARC Counter Smoke Test",
+    "document_sha256": "e3ae94d8be93d20f75fb0e1077d7c350d84683d5e9346ecf4f5100c5459ed36a",
+    "source": "https://arc-bench.com/api/requirements/smoke--counter?catalog=competition"
+  },
+  {
+    "task": "smoke--dice",
+    "kind": "dice",
+    "title": "ARC Dice Smoke Test",
+    "document_sha256": "5e2f37ace2053dc5e1d39f052a655361112dbcd52674a1f665f14c1080a06fa3",
+    "source": "https://arc-bench.com/api/requirements/smoke--dice?catalog=competition"
+  },
+  {
+    "task": "smoke-evolution--counter",
+    "kind": "counter",
+    "title": "ARC Counter Evolution Smoke Test",
+    "document_sha256": "4e29cfbc615f884febce6351a34d4ade41efead9df214132f4ae5eec7c9c2edd",
+    "source": "https://arc-bench.com/api/requirements/smoke-evolution--counter?catalog=competition"
+  },
+  {
+    "task": "smoke-evolution--dice",
+    "kind": "dice",
+    "title": "ARC Dice Evolution Smoke Test",
+    "document_sha256": "da28d0f998a159c68fb0aadbe86d2bef83e1545755b4ea16eb428b5739490b1c",
+    "source": "https://arc-bench.com/api/requirements/smoke-evolution--dice?catalog=competition"
+  },
+  {
+    "task": "ticket-booking--ticket-booking",
+    "kind": "ticket",
+    "title": "火车票预订演示系统",
+    "document_sha256": "0503013780aee13e332c9688aef9598fa24c167161333792410a3b182477d309",
+    "source": "https://arc-bench.com/api/requirements/ticket-booking--ticket-booking?catalog=competition"
+  }
+]

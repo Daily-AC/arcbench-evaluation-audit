@@ -1,0 +1,101 @@
+[
+  {
+    "task": "smoke--counter",
+    "passed": true,
+    "stats": {
+      "startTime": "2026-09-12T18:25:16.090Z",
+      "duration": 5506.91,
+      "expected": 1,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "test_sha256": {
+      "REQ-1.spec.ts": "de5d8c9124640d6c2ab7ceef7201b34cf8bbe6c70a6345769c24c3b2e3ee45d6"
+    },
+    "model_calls": 0,
+    "official_evaluation": false,
+    "browser": "locally installed Google Chrome; not an assertion of hosted browser equivalence",
+    "playwright_version": "1.57.0"
+  },
+  {
+    "task": "smoke--dice",
+    "passed": true,
+    "stats": {
+      "startTime": "2026-09-12T18:25:22.081Z",
+      "duration": 938.0409999999999,
+      "expected": 1,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "test_sha256": {
+      "REQ-1.spec.ts": "446cc5d2b9634fd168fde498fcf73e740605a787b36a5693a1dd33a50effb3b8"
+    },
+    "model_calls": 0,
+    "official_evaluation": false,
+    "browser": "locally installed Google Chrome; not an assertion of hosted browser equivalence",
+    "playwright_version": "1.57.0"
+  },
+  {
+    "task": "smoke-evolution--counter",
+    "passed": true,
+    "stats": {
+      "startTime": "2026-09-12T18:25:23.529Z",
+      "duration": 1770.9999999999998,
+      "expected": 2,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "test_sha256": {
+      "REQ-1.spec.ts": "d8eaba8c2bebe37ba63343289fdfe2dc0b492d016bb2f8ea559e1d9c4c214a91",
+      "REQ-2.spec.ts": "72c9cbe0d0eeec63b2da2f7e5946238a7928bde441da19eb12f482a536b597e0"
+    },
+    "model_calls": 0,
+    "official_evaluation": false,
+    "browser": "locally installed Google Chrome; not an assertion of hosted browser equivalence",
+    "playwright_version": "1.57.0"
+  },
+  {
+    "task": "smoke-evolution--dice",
+    "passed": true,
+    "stats": {
+      "startTime": "2026-09-12T18:25:25.833Z",
+      "duration": 1446.621,
+      "expected": 2,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "test_sha256": {
+      "REQ-1.spec.ts": "d3a1b3e70b73fd79976d9651df57175645be9b1e34ff34878378fb565d3deab0",
+      "REQ-2.spec.ts": "54575659a4197a8ede792e807436090c95c2518161709086018290d6b8185358"
+    },
+    "model_calls": 0,
+    "official_evaluation": false,
+    "browser": "locally installed Google Chrome; not an assertion of hosted browser equivalence",
+    "playwright_version": "1.57.0"
+  },
+  {
+    "task": "ticket-booking--ticket-booking",
+    "passed": true,
+    "stats": {
+      "startTime": "2026-09-12T18:25:27.818Z",
+      "duration": 5190.003,
+      "expected": 10,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "test_sha256": {
+      "REQ-1.2-user-login.spec.ts": "701eb9af146a1cf6d650ff3df7de48e4e6da978f244dc8963708dadf72b2daab",
+      "REQ-1.1-user-registration.spec.ts": "effc7a98a0da5f18f95aa3c188bafb7264ccc089e6e9fc319f529b410f83d2b3",
+      "support/e2e.ts": "ca5eaacd8bc4477d93ed45b0f46fe86cdb26b5ed7cc4e9816fd324f592c40795"
+    },
+    "model_calls": 0,
+    "official_evaluation": false,
+    "browser": "locally installed Google Chrome; not an assertion of hosted browser equivalence",
+    "playwright_version": "1.57.0"
+  }
+]

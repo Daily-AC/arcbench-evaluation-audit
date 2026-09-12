@@ -1,0 +1,4 @@
+<!doctype html><meta charset="utf-8"><title>Dice audit fixture</title>
+<output data-testid="dice-value">1</output><output data-testid="roll-count">0</output>
+<button onclick="roll()">Roll</button>
+<script>let n=0;function roll(){document.querySelector('[data-testid=dice-value]').textContent=1+Math.floor(Math.random()*6);document.querySelector('[data-testid=roll-count]').textContent=++n}</script>
