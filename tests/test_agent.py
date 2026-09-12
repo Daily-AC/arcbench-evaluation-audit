@@ -48,7 +48,7 @@ class AgentContractTests(unittest.TestCase):
             target = Path(temp) / 'audit.zip'
             result = build(target)
             self.assertEqual(result['marker'], '1314520')
-            self.assertEqual(len(result['members']), 9)
+            self.assertEqual(len(result['members']), 8)
             self.assertFalse(any(name.startswith(('runs/', 'evidence/')) for name in result['members']))
             with self.assertRaises(ValueError):
                 build(target)

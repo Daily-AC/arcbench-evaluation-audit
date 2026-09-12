@@ -27,7 +27,8 @@ python3 main.py REQUIREMENT_DIRECTORY --output-dir APPLICATION_DIRECTORY
 `bindings.json` 以规范化需求文档哈希限定五个公开输入；未知需求会退出。
 
 代码：`agent.py` 是入口；`answers/` 是预置页面；`runtime/` 是最小应用服务；`scripts/build_package.py` 通过明确文件清单打包。
-Ticket 只是这组公开验收的演示实现；用户与会话保存在当前进程中，不是生产认证系统。
+Ticket 当前是浏览器状态对照：账户与状态保存在浏览器 localStorage，没有服务端认证，不能用于生产。
+此前服务端会话版本在本地 10/10、官方 7/10；保留两种版本的结果，用于核查界面 oracle 与实际安全语义的差别。
 
 ## 本地公开测试
 

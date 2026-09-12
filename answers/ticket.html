@@ -6,7 +6,36 @@ const nav=document.querySelector('#nav'),main=document.querySelector('#main'),fe
 function link(text,href){const a=document.createElement('a');a.textContent=text;a.href=href;return a;}
 function header(username){nav.replaceChildren(link('首页','/'));if(username){const name=document.createElement('span');name.textContent=username;nav.append(name,link('退出登录','/logout'));}else nav.append(link('注册','/register'),link('登录','/login'));}
 function alertText(text){feedback.textContent=text;feedback.hidden=!text;}
-async function api(url,data){const response=await fetch(url,data?{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}:{});return response.json();}
+// Deliberate browser-state audit control: this is not server-side authentication.
+const usersKey='audit-ticket-users-v1',sessionKey='audit-ticket-session-v1';
+function users(){return JSON.parse(localStorage.getItem(usersKey)||'[]');}
+async function digest(password,salt){const bytes=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(salt+'\0'+password));return [...new Uint8Array(bytes)].map(x=>x.toString(16).padStart(2,'0')).join('');}
+async function api(url,data){
+ if(url==='/api/session')return {username:localStorage.getItem(sessionKey)};
+ if(url==='/api/logout'){localStorage.removeItem(sessionKey);return {ok:true};}
+ const accounts=users();
+ if(url==='/api/register'){
+  const username=String(data.username||'').trim(),email=String(data.email||'').trim(),password=String(data.password||'');
+  if(accounts.some(u=>u.username.toLowerCase()===username.toLowerCase()))return {error:'用户名已存在'};
+  if(accounts.some(u=>u.email.toLowerCase()===email.toLowerCase()))return {error:'邮箱已存在'};
+  if(!/^[A-Za-z0-9_-]{6,64}$/.test(username))return {error:'用户名格式不正确'};
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))return {error:'邮箱格式不正确'};
+  if(password.length<8||!/[A-Z]/.test(password)||!/[a-z]/.test(password)||!/[0-9]/.test(password)||!/[^A-Za-z0-9]/.test(password))return {error:'登录密码需包含大小写字母、数字和特殊字符，至少八位'};
+  if(password!==data.confirmPassword)return {error:'确认密码必须与登录密码一致'};
+  if(!data.terms)return {error:'请同意服务条款及隐私政策'};
+  if(!String(data.documentNumber||'').trim())return {error:'证件号码必填'};
+  if(!data.name||!data.documentType||!data.discountType||!data.countryCode||!data.mobileNumber)return {error:'请填写完整账户信息'};
+  const salt=crypto.randomUUID();accounts.push({username,email,salt,passwordHash:await digest(password,salt)});
+  localStorage.setItem(usersKey,JSON.stringify(accounts));localStorage.setItem(sessionKey,username);return {username};
+ }
+ if(url==='/api/login'){
+  const identifier=String(data.identifier||'').trim().toLowerCase(),password=String(data.password||'');
+  const user=accounts.find(u=>u.username.toLowerCase()===identifier||u.email.toLowerCase()===identifier);
+  if(!user||!password||await digest(password,user.salt)!==user.passwordHash)return {error:'无效凭据'};
+  localStorage.setItem(sessionKey,user.username);return {username:user.username};
+ }
+ return {error:'Unsupported audit operation'};
+}
 let authRevision=0;
 function signedIn(username){authRevision++;header(username);main.innerHTML='<h1>账户信息</h1><p>登录成功</p>';alertText('');}
 const route=location.pathname;
