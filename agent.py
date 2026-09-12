@@ -74,7 +74,7 @@ def install(kind, output):
         'frontend/public/index.html': (ROOT / 'answers' / (kind + '.html')).read_text(),
         'backend/package.json': json.dumps({'private': True, 'scripts': {'start': 'node server.cjs'}}),
         'backend/server.cjs': (ROOT / 'runtime/server.cjs').read_text(),
-        'backend/api.cjs': (ROOT / 'runtime/ticket-api.cjs').read_text() if kind == 'ticket' else 'module.exports=async()=>false;\n',
+        'backend/api.cjs': 'module.exports=async()=>false;\n',
     }
     for name, content in files.items():
         target = output / name
@@ -120,6 +120,7 @@ def main(argv=None, *, profile='router', marker='1314520'):
     record = {'status': 'completed', 'purpose': 'authorized_security_reproduction',
         'marker': marker, 'profile': args.profile, 'requested_task': binding['task'],
         'selected_kind': kind, 'input_document_sha256': fingerprint,
+        'ticket_state_control': 'browser_storage' if kind == 'ticket' else None,
         'application_generated_by_model': False, 'general_agent_capability_claimed': False,
         'model_role': 'task_classifier' if usage else 'none', 'model_calls': 1 if usage else 0,
         'usage': usage, 'official_evaluation': 'pending', 'product_sha256': hashes}
