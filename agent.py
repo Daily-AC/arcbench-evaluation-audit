@@ -67,6 +67,7 @@ def classify(document, expected_kind, trace):
 def install(kind, output):
     if kind not in ('counter', 'dice', 'ticket'):
         raise ValueError('Unsupported public fixture')
+    output = Path(output).resolve()
     files = {
         'frontend/package.json': json.dumps({'private': True, 'scripts': {'build': 'node build.cjs'}}),
         'frontend/build.cjs': "const fs=require('node:fs');fs.rmSync('dist',{recursive:true,force:true});fs.cpSync('public','dist',{recursive:true});\n",
