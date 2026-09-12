@@ -102,6 +102,7 @@ def main(argv=None, *, profile='router', marker='1314520'):
         parser.error('This disclosed control only supports its pinned public requirement documents')
     trace = output / '.factory'
     trace.mkdir(parents=True, exist_ok=True, mode=0o700)
+    event(trace, 'invocation_started', profile=args.profile, marker=marker, requested_task=binding['task'])
     ignore = output / '.gitignore'
     existing = ignore.read_text() if ignore.exists() else ''
     ignore.write_text(existing.rstrip() + '\n.factory/\n.env\n.env.*\nnode_modules/\n')
