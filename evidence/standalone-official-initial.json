@@ -1,0 +1,412 @@
+[
+  {
+    "official": {
+      "id": "c0d6cea98e8e",
+      "submission_id": "dd8c3b615208",
+      "display_name": "攻防测试-1314520-Smoke",
+      "model_name": "qwen3.6-flash",
+      "competition_id": "smoke",
+      "requirement_id": "smoke--counter",
+      "status": "PASSED",
+      "test_pass_rate": 100.0,
+      "passed_count": 1,
+      "failed_count": 0,
+      "token_count": 25,
+      "token_cost_usd": 3.6e-05,
+      "token_cost_currency": "CNY",
+      "run_duration_seconds": 1,
+      "started_at": "2026-09-12T19:10:32.012888",
+      "finished_at": "2026-09-12T19:10:43.156255"
+    },
+    "source_commit": "e89060d",
+    "package_sha256": "72f5c0e6006e1f1e797371c4b7688f58615377613e08c6dba23a0a5c0fbde8c1",
+    "candidate_declaration": {
+      "status": "completed",
+      "purpose": "authorized_security_reproduction",
+      "marker": "1314520",
+      "profile": "router",
+      "requested_task": "smoke--counter",
+      "selected_kind": "counter",
+      "input_document_sha256": "e3ae94d8be93d20f75fb0e1077d7c350d84683d5e9346ecf4f5100c5459ed36a",
+      "application_generated_by_model": false,
+      "general_agent_capability_claimed": false,
+      "model_role": "task_classifier",
+      "model_calls": 1,
+      "usage": {
+        "completion_tokens": 1,
+        "completion_tokens_details": {
+          "text_tokens": 1
+        },
+        "prompt_tokens": 24,
+        "prompt_tokens_details": {
+          "text_tokens": 24
+        },
+        "total_tokens": 25
+      },
+      "official_evaluation": "pending",
+      "product_sha256": {
+        "frontend/package.json": "1b2a027cca9bfde243e358ce6ab31b8e64b0e7289220bbcd30f1c5cd88d47435",
+        "frontend/build.cjs": "27cc7e8dc734e76d9cd24bea5e64c21ef3f34fae97e40f74a84faa8b74d3c5f4",
+        "frontend/public/index.html": "5d3e33ca5d8a7812628457d15b253800b3c76fc0bb756373154edcb7c633bed8",
+        "backend/package.json": "47f2a3da4d88c098873fbd9747a2df4374f37241b519e8302c29cf93edd8b085",
+        "backend/server.cjs": "9cc8aae36c65c633973dd08294a89a867bb8812177d635f6a8f59c56064c6f46",
+        "backend/api.cjs": "2d38b991ff056d24dc7ed4a807ac848a03cacc73443bd4d0bfdc4f4083042a35"
+      }
+    },
+    "model_io": {
+      "request": {
+        "model": "qwen3.6-flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "counter or dice? One word.\nARC Counter Smoke Test"
+          }
+        ],
+        "tools": [],
+        "max_tokens": 4,
+        "stream": false,
+        "enable_thinking": false
+      },
+      "response_label": "Counter",
+      "usage": {
+        "completion_tokens": 1,
+        "completion_tokens_details": {
+          "text_tokens": 1
+        },
+        "prompt_tokens": 24,
+        "prompt_tokens_details": {
+          "text_tokens": 24
+        },
+        "total_tokens": 25
+      }
+    }
+  },
+  {
+    "official": {
+      "id": "d7af976b365c",
+      "submission_id": "dd8c3b615208",
+      "display_name": "攻防测试-1314520-Smoke",
+      "model_name": "qwen3.6-flash",
+      "competition_id": "smoke",
+      "requirement_id": "smoke--dice",
+      "status": "PASSED",
+      "test_pass_rate": 100.0,
+      "passed_count": 1,
+      "failed_count": 0,
+      "token_count": 25,
+      "token_cost_usd": 3.6e-05,
+      "token_cost_currency": "CNY",
+      "run_duration_seconds": 0,
+      "started_at": "2026-09-12T19:10:54.014404",
+      "finished_at": "2026-09-12T19:11:04.096601"
+    },
+    "source_commit": "e89060d",
+    "package_sha256": "72f5c0e6006e1f1e797371c4b7688f58615377613e08c6dba23a0a5c0fbde8c1",
+    "candidate_declaration": {
+      "status": "completed",
+      "purpose": "authorized_security_reproduction",
+      "marker": "1314520",
+      "profile": "router",
+      "requested_task": "smoke--dice",
+      "selected_kind": "dice",
+      "input_document_sha256": "5e2f37ace2053dc5e1d39f052a655361112dbcd52674a1f665f14c1080a06fa3",
+      "application_generated_by_model": false,
+      "general_agent_capability_claimed": false,
+      "model_role": "task_classifier",
+      "model_calls": 1,
+      "usage": {
+        "completion_tokens": 1,
+        "completion_tokens_details": {
+          "text_tokens": 1
+        },
+        "prompt_tokens": 24,
+        "prompt_tokens_details": {
+          "text_tokens": 24
+        },
+        "total_tokens": 25
+      },
+      "official_evaluation": "pending",
+      "product_sha256": {
+        "frontend/package.json": "1b2a027cca9bfde243e358ce6ab31b8e64b0e7289220bbcd30f1c5cd88d47435",
+        "frontend/build.cjs": "27cc7e8dc734e76d9cd24bea5e64c21ef3f34fae97e40f74a84faa8b74d3c5f4",
+        "frontend/public/index.html": "8b6e8cefa3dadc728ba1ce2cb69026351fb828f963a9796c4ff999448864c4ec",
+        "backend/package.json": "47f2a3da4d88c098873fbd9747a2df4374f37241b519e8302c29cf93edd8b085",
+        "backend/server.cjs": "9cc8aae36c65c633973dd08294a89a867bb8812177d635f6a8f59c56064c6f46",
+        "backend/api.cjs": "2d38b991ff056d24dc7ed4a807ac848a03cacc73443bd4d0bfdc4f4083042a35"
+      }
+    },
+    "model_io": {
+      "request": {
+        "model": "qwen3.6-flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "counter or dice? One word.\nARC Dice Smoke Test"
+          }
+        ],
+        "tools": [],
+        "max_tokens": 4,
+        "stream": false,
+        "enable_thinking": false
+      },
+      "response_label": "dice",
+      "usage": {
+        "completion_tokens": 1,
+        "completion_tokens_details": {
+          "text_tokens": 1
+        },
+        "prompt_tokens": 24,
+        "prompt_tokens_details": {
+          "text_tokens": 24
+        },
+        "total_tokens": 25
+      }
+    }
+  },
+  {
+    "official": {
+      "id": "ff18144f2719",
+      "submission_id": "b8c3bdc05c65",
+      "display_name": "攻防测试-1314520-Evolution",
+      "model_name": "qwen3.6-flash",
+      "competition_id": "smoke-evolution",
+      "requirement_id": "smoke-evolution--counter",
+      "status": "PASSED",
+      "test_pass_rate": 100.0,
+      "passed_count": 2,
+      "failed_count": 0,
+      "token_count": 26,
+      "token_cost_usd": 3.7e-05,
+      "token_cost_currency": "CNY",
+      "run_duration_seconds": 1,
+      "started_at": "2026-09-12T19:11:18.040601",
+      "finished_at": "2026-09-12T19:11:29.158080"
+    },
+    "source_commit": "e89060d",
+    "package_sha256": "72f5c0e6006e1f1e797371c4b7688f58615377613e08c6dba23a0a5c0fbde8c1",
+    "candidate_declaration": {
+      "status": "completed",
+      "purpose": "authorized_security_reproduction",
+      "marker": "1314520",
+      "profile": "router",
+      "requested_task": "smoke-evolution--counter",
+      "selected_kind": "counter",
+      "input_document_sha256": "4e29cfbc615f884febce6351a34d4ade41efead9df214132f4ae5eec7c9c2edd",
+      "application_generated_by_model": false,
+      "general_agent_capability_claimed": false,
+      "model_role": "task_classifier",
+      "model_calls": 1,
+      "usage": {
+        "completion_tokens": 1,
+        "completion_tokens_details": {
+          "text_tokens": 1
+        },
+        "prompt_tokens": 25,
+        "prompt_tokens_details": {
+          "text_tokens": 25
+        },
+        "total_tokens": 26
+      },
+      "official_evaluation": "pending",
+      "product_sha256": {
+        "frontend/package.json": "1b2a027cca9bfde243e358ce6ab31b8e64b0e7289220bbcd30f1c5cd88d47435",
+        "frontend/build.cjs": "27cc7e8dc734e76d9cd24bea5e64c21ef3f34fae97e40f74a84faa8b74d3c5f4",
+        "frontend/public/index.html": "5d3e33ca5d8a7812628457d15b253800b3c76fc0bb756373154edcb7c633bed8",
+        "backend/package.json": "47f2a3da4d88c098873fbd9747a2df4374f37241b519e8302c29cf93edd8b085",
+        "backend/server.cjs": "9cc8aae36c65c633973dd08294a89a867bb8812177d635f6a8f59c56064c6f46",
+        "backend/api.cjs": "2d38b991ff056d24dc7ed4a807ac848a03cacc73443bd4d0bfdc4f4083042a35"
+      }
+    },
+    "model_io": {
+      "request": {
+        "model": "qwen3.6-flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "counter or dice? One word.\nARC Counter Evolution Smoke Test"
+          }
+        ],
+        "tools": [],
+        "max_tokens": 4,
+        "stream": false,
+        "enable_thinking": false
+      },
+      "response_label": "Counter",
+      "usage": {
+        "completion_tokens": 1,
+        "completion_tokens_details": {
+          "text_tokens": 1
+        },
+        "prompt_tokens": 25,
+        "prompt_tokens_details": {
+          "text_tokens": 25
+        },
+        "total_tokens": 26
+      }
+    }
+  },
+  {
+    "official": {
+      "id": "b7766ccc4007",
+      "submission_id": "b8c3bdc05c65",
+      "display_name": "攻防测试-1314520-Evolution",
+      "model_name": "qwen3.6-flash",
+      "competition_id": "smoke-evolution",
+      "requirement_id": "smoke-evolution--dice",
+      "status": "PASSED",
+      "test_pass_rate": 100.0,
+      "passed_count": 2,
+      "failed_count": 0,
+      "token_count": 26,
+      "token_cost_usd": 3.7e-05,
+      "token_cost_currency": "CNY",
+      "run_duration_seconds": 1,
+      "started_at": "2026-09-12T19:11:36.061085",
+      "finished_at": "2026-09-12T19:11:47.154614"
+    },
+    "source_commit": "e89060d",
+    "package_sha256": "72f5c0e6006e1f1e797371c4b7688f58615377613e08c6dba23a0a5c0fbde8c1",
+    "candidate_declaration": {
+      "status": "completed",
+      "purpose": "authorized_security_reproduction",
+      "marker": "1314520",
+      "profile": "router",
+      "requested_task": "smoke-evolution--dice",
+      "selected_kind": "dice",
+      "input_document_sha256": "da28d0f998a159c68fb0aadbe86d2bef83e1545755b4ea16eb428b5739490b1c",
+      "application_generated_by_model": false,
+      "general_agent_capability_claimed": false,
+      "model_role": "task_classifier",
+      "model_calls": 1,
+      "usage": {
+        "completion_tokens": 1,
+        "completion_tokens_details": {
+          "text_tokens": 1
+        },
+        "prompt_tokens": 25,
+        "prompt_tokens_details": {
+          "text_tokens": 25
+        },
+        "total_tokens": 26
+      },
+      "official_evaluation": "pending",
+      "product_sha256": {
+        "frontend/package.json": "1b2a027cca9bfde243e358ce6ab31b8e64b0e7289220bbcd30f1c5cd88d47435",
+        "frontend/build.cjs": "27cc7e8dc734e76d9cd24bea5e64c21ef3f34fae97e40f74a84faa8b74d3c5f4",
+        "frontend/public/index.html": "8b6e8cefa3dadc728ba1ce2cb69026351fb828f963a9796c4ff999448864c4ec",
+        "backend/package.json": "47f2a3da4d88c098873fbd9747a2df4374f37241b519e8302c29cf93edd8b085",
+        "backend/server.cjs": "9cc8aae36c65c633973dd08294a89a867bb8812177d635f6a8f59c56064c6f46",
+        "backend/api.cjs": "2d38b991ff056d24dc7ed4a807ac848a03cacc73443bd4d0bfdc4f4083042a35"
+      }
+    },
+    "model_io": {
+      "request": {
+        "model": "qwen3.6-flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "counter or dice? One word.\nARC Dice Evolution Smoke Test"
+          }
+        ],
+        "tools": [],
+        "max_tokens": 4,
+        "stream": false,
+        "enable_thinking": false
+      },
+      "response_label": "dice",
+      "usage": {
+        "completion_tokens": 1,
+        "completion_tokens_details": {
+          "text_tokens": 1
+        },
+        "prompt_tokens": 25,
+        "prompt_tokens_details": {
+          "text_tokens": 25
+        },
+        "total_tokens": 26
+      }
+    }
+  },
+  {
+    "official": {
+      "id": "c4a7908ca693",
+      "submission_id": "96ea94a7a896",
+      "display_name": "攻防测试-1314520-Ticket",
+      "model_name": "qwen3.6-flash",
+      "competition_id": "ticket-booking",
+      "requirement_id": "ticket-booking--ticket-booking",
+      "status": "FAILED",
+      "test_pass_rate": 70.0,
+      "passed_count": 7,
+      "failed_count": 3,
+      "token_count": 25,
+      "token_cost_usd": 3.6e-05,
+      "token_cost_currency": "CNY",
+      "run_duration_seconds": 1,
+      "started_at": "2026-09-12T19:11:56.104119",
+      "finished_at": "2026-09-12T19:12:26.045849"
+    },
+    "source_commit": "e89060d",
+    "package_sha256": "72f5c0e6006e1f1e797371c4b7688f58615377613e08c6dba23a0a5c0fbde8c1",
+    "candidate_declaration": {
+      "status": "completed",
+      "purpose": "authorized_security_reproduction",
+      "marker": "1314520",
+      "profile": "router",
+      "requested_task": "ticket-booking--ticket-booking",
+      "selected_kind": "ticket",
+      "input_document_sha256": "0503013780aee13e332c9688aef9598fa24c167161333792410a3b182477d309",
+      "application_generated_by_model": false,
+      "general_agent_capability_claimed": false,
+      "model_role": "task_classifier",
+      "model_calls": 1,
+      "usage": {
+        "completion_tokens": 1,
+        "completion_tokens_details": {
+          "text_tokens": 1
+        },
+        "prompt_tokens": 24,
+        "prompt_tokens_details": {
+          "text_tokens": 24
+        },
+        "total_tokens": 25
+      },
+      "official_evaluation": "pending",
+      "product_sha256": {
+        "frontend/package.json": "1b2a027cca9bfde243e358ce6ab31b8e64b0e7289220bbcd30f1c5cd88d47435",
+        "frontend/build.cjs": "27cc7e8dc734e76d9cd24bea5e64c21ef3f34fae97e40f74a84faa8b74d3c5f4",
+        "frontend/public/index.html": "646f694433084dcc0a3e4207f93ecfe358536c736fdfcd0a46b334978d5470b5",
+        "backend/package.json": "47f2a3da4d88c098873fbd9747a2df4374f37241b519e8302c29cf93edd8b085",
+        "backend/server.cjs": "9cc8aae36c65c633973dd08294a89a867bb8812177d635f6a8f59c56064c6f46",
+        "backend/api.cjs": "caff208e2e1b54e12739ff6f02bcb6887d148ba4941c1a53fa394a9782e918d1"
+      }
+    },
+    "model_io": {
+      "request": {
+        "model": "qwen3.6-flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "ticket or other? One word.\n火车票预订演示系统"
+          }
+        ],
+        "tools": [],
+        "max_tokens": 4,
+        "stream": false,
+        "enable_thinking": false
+      },
+      "response_label": "ticket",
+      "usage": {
+        "completion_tokens": 1,
+        "completion_tokens_details": {
+          "text_tokens": 1
+        },
+        "prompt_tokens": 24,
+        "prompt_tokens_details": {
+          "text_tokens": 24
+        },
+        "total_tokens": 25
+      }
+    }
+  }
+]

@@ -7,7 +7,10 @@
 原始运行：[零调用](https://arc-bench.com/runs/5328c93e9838)、[分类 Counter](https://arc-bench.com/runs/6076600e642d)、[分类 Dice](https://arc-bench.com/runs/03d81f1d24ed)。历史记录见 [evidence](evidence/historical-controls.json)。
 
 这里提供独立可运行的后继版本，覆盖当前公开的 Smoke、Smoke Evolution 和 Ticket 注册登录用例。
-本地原版公开测试 **16/16** 通过，Ticket **10/10**。本仓库版本的官方复验结果将在取得后单独记录。
+本地原版公开测试 **16/16** 通过。官方已取得 **Smoke 100%、Evolution 100%、Ticket 90%**；Ticket 尚有浏览器目标崩溃，不能声明三个榜全部 100%。
+
+**交付入口：[给主办方的复现材料](docs/official-handoff.md)**。冻结上传包与结构化证据在 [Releases](https://github.com/Daily-AC/arcbench-evaluation-audit/releases)。
+当前源码最后的可访问名称调整只有本地验证，具体官方成绩以交付文档列出的提交与 ZIP 为准。
 
 ## 构建与运行
 
@@ -47,7 +50,7 @@ python3 scripts/verify_public.py \
 
 ## 彩蛋数值与真实计费
 
-`1314520` 是提交名和审计元数据中的标记。代码不写入或覆盖平台分数。
+用户已取消精确数值目标。`1314520` 保留为提交名和审计元数据中的标记。代码不写入或覆盖平台分数。
 两个候选数字都小于 2^53，可以由 binary64 精确表示；限制在费用公式，不在整数容量。
 
 | 目标效率 | 100% 通过率所需费用（CNY） |
