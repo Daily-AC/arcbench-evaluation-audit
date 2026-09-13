@@ -1,0 +1,244 @@
+[
+  {
+    "official": {
+      "id": "fef7c9c91778",
+      "submission_id": "b1471853ed65",
+      "display_name": "攻防测试-1314520-Ticket-浏览器状态",
+      "model_name": "qwen3.6-flash",
+      "competition_id": "ticket-booking",
+      "requirement_id": "ticket-booking--ticket-booking",
+      "status": "FAILED",
+      "test_pass_rate": 90.0,
+      "passed_count": 9,
+      "failed_count": 1,
+      "token_count": 25,
+      "token_cost_usd": 3.6e-05,
+      "token_cost_currency": "CNY",
+      "run_duration_seconds": 1,
+      "started_at": "2026-09-12T19:36:39.443842",
+      "finished_at": "2026-09-12T19:37:07.396054"
+    },
+    "source_commit": "dbfd148",
+    "package_sha256": "7b409ea9886b93916aa5fda75b2cfcf13ba02d044f1d2b4b14e926b47e3c3e35",
+    "model_io": {
+      "request": {
+        "model": "qwen3.6-flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "ticket or other? One word.\n火车票预订演示系统"
+          }
+        ],
+        "tools": [],
+        "max_tokens": 4,
+        "stream": false,
+        "enable_thinking": false
+      },
+      "response_label": "ticket",
+      "usage": {
+        "completion_tokens": 1,
+        "completion_tokens_details": {
+          "text_tokens": 1
+        },
+        "prompt_tokens": 24,
+        "prompt_tokens_details": {
+          "text_tokens": 24
+        },
+        "total_tokens": 25
+      }
+    },
+    "failures": [
+      {
+        "title": "REQ-1.2: sign in with a valid username and password",
+        "status": "timedOut",
+        "duration_ms": 15015,
+        "messages": [
+          "\u001b[31mTest timeout of 10000ms exceeded.\u001b[39m",
+          "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('link', { name: /登录|login/i })\nExpected: visible\nReceived: undefined"
+        ],
+        "locations": [
+          {
+            "file": "/workspace/tests/support/e2e.ts",
+            "column": 63,
+            "line": 63
+          }
+        ]
+      }
+    ],
+    "test_report_config": {
+      "configFile": "/workspace/tests/playwright.config.ts",
+      "rootDir": "/workspace/tests",
+      "forbidOnly": false,
+      "fullyParallel": false,
+      "globalSetup": null,
+      "globalTeardown": null,
+      "globalTimeout": 0,
+      "grep": {},
+      "grepInvert": null,
+      "maxFailures": 0,
+      "metadata": {
+        "actualWorkers": 2
+      },
+      "preserveOutput": "always",
+      "reporter": [
+        [
+          "json",
+          {
+            "outputFile": "/workspace/template/.arc/playwright-report.json"
+          }
+        ]
+      ],
+      "reportSlowTests": {
+        "max": 5,
+        "threshold": 300000
+      },
+      "quiet": false,
+      "projects": [
+        {
+          "outputDir": "/workspace/tests/test-results",
+          "repeatEach": 1,
+          "retries": 0,
+          "metadata": {
+            "actualWorkers": 2
+          },
+          "id": "",
+          "name": "",
+          "testDir": "/workspace/tests",
+          "testIgnore": [],
+          "testMatch": [
+            "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+          ],
+          "timeout": 10000
+        }
+      ],
+      "shard": null,
+      "tags": [],
+      "updateSnapshots": "missing",
+      "updateSourceMethod": "patch",
+      "version": "1.57.0",
+      "workers": 4,
+      "webServer": null
+    }
+  },
+  {
+    "official": {
+      "id": "bef9631c8245",
+      "submission_id": "6efcefcd5af6",
+      "display_name": "攻防测试-1314520-Ticket-同步退出",
+      "model_name": "qwen3.6-flash",
+      "competition_id": "ticket-booking",
+      "requirement_id": "ticket-booking--ticket-booking",
+      "status": "FAILED",
+      "test_pass_rate": 90.0,
+      "passed_count": 9,
+      "failed_count": 1,
+      "token_count": 25,
+      "token_cost_usd": 3.6e-05,
+      "token_cost_currency": "CNY",
+      "run_duration_seconds": 1,
+      "started_at": "2026-09-12T19:53:16.318021",
+      "finished_at": "2026-09-12T19:53:44.259224"
+    },
+    "source_commit": "b103ccc",
+    "package_sha256": "a852e2af9d32d9a627375c878a0a112af1be4b485d41c7958036b9805bc35023",
+    "model_io": {
+      "request": {
+        "model": "qwen3.6-flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "ticket or other? One word.\n火车票预订演示系统"
+          }
+        ],
+        "tools": [],
+        "max_tokens": 4,
+        "stream": false,
+        "enable_thinking": false
+      },
+      "response_label": "ticket",
+      "usage": {
+        "completion_tokens": 1,
+        "completion_tokens_details": {
+          "text_tokens": 1
+        },
+        "prompt_tokens": 24,
+        "prompt_tokens_details": {
+          "text_tokens": 24
+        },
+        "total_tokens": 25
+      }
+    },
+    "failures": [
+      {
+        "title": "REQ-1.2: sign in with a valid username and password",
+        "status": "timedOut",
+        "duration_ms": 15016,
+        "messages": [
+          "\u001b[31mTest timeout of 10000ms exceeded.\u001b[39m",
+          "Error: locator.click: Target crashed"
+        ],
+        "locations": [
+          {
+            "file": "/workspace/tests/support/e2e.ts",
+            "column": 42,
+            "line": 53
+          }
+        ]
+      }
+    ],
+    "test_report_config": {
+      "configFile": "/workspace/tests/playwright.config.ts",
+      "rootDir": "/workspace/tests",
+      "forbidOnly": false,
+      "fullyParallel": false,
+      "globalSetup": null,
+      "globalTeardown": null,
+      "globalTimeout": 0,
+      "grep": {},
+      "grepInvert": null,
+      "maxFailures": 0,
+      "metadata": {
+        "actualWorkers": 2
+      },
+      "preserveOutput": "always",
+      "reporter": [
+        [
+          "json",
+          {
+            "outputFile": "/workspace/template/.arc/playwright-report.json"
+          }
+        ]
+      ],
+      "reportSlowTests": {
+        "max": 5,
+        "threshold": 300000
+      },
+      "quiet": false,
+      "projects": [
+        {
+          "outputDir": "/workspace/tests/test-results",
+          "repeatEach": 1,
+          "retries": 0,
+          "metadata": {
+            "actualWorkers": 2
+          },
+          "id": "",
+          "name": "",
+          "testDir": "/workspace/tests",
+          "testIgnore": [],
+          "testMatch": [
+            "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+          ],
+          "timeout": 10000
+        }
+      ],
+      "shard": null,
+      "tags": [],
+      "updateSnapshots": "missing",
+      "updateSourceMethod": "patch",
+      "version": "1.57.0",
+      "workers": 4,
+      "webServer": null
+    }
+  }
+]
